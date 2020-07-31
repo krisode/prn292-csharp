@@ -1,0 +1,89 @@
+﻿@model LoginSupermarketW6.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+
+
+        <img style="width:300px;height:300px" src="@Html.DisplayFor(model => model.Image)" class="img-responsive" />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantityPerUnit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantityPerUnit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitInStock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitInStock)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitOnOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitOnOrder)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.CatName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.CatName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplier.SupName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supplier.SupName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status1.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status1.Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

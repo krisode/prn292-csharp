@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "AdminHome";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="jumbotron">
+    <h1>MANAGE YOUR SHOP</h1>
+    <p class="lead">Do you wanna view newest orders from the customers ? </p>
+    <p><a href="@Url.Action("Index","Orders")" class="btn btn-primary btn-lg">View orders &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Manage your stock</h2>
+        <p><a class="btn btn-default" href="@Url.Action("Index","Products")">Manage Stock &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Manage category</h2>
+        <p><a class="btn btn-default" href="@Url.Action("Index","Categories")">Manage Category &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Manage supplier</h2>
+        <p><a class="btn btn-default" href="@Url.Action("Index","Suppliers")">Manage Supplier &raquo;</a></p>
+    </div>
+</div>
+
+
+

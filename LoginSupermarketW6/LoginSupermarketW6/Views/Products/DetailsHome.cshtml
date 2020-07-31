@@ -1,0 +1,56 @@
+﻿@model LoginSupermarketW6.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+
+        <img style="max-width:280px;max-height:300px;width:auto;height:auto" src="@Html.DisplayFor(model => model.Image)" class="img-responsive" />
+        <br/>
+
+        <dt>
+            Name: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProName)
+        </dd>
+
+        <dt>
+            Price:
+        </dt>
+
+        <dd>
+            $@Html.DisplayFor(model => model.UnitPrice)
+        </dd>
+
+        <dt>
+            Remain : 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitInStock)
+        </dd>
+
+        <dt>
+            Supplier:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supplier.SupName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "IndexHome")
+</p>
+

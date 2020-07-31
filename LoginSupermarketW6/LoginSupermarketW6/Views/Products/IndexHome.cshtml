@@ -1,0 +1,33 @@
+﻿@model IEnumerable<LoginSupermarketW6.Models.Product>
+@{
+    ViewBag.Title = "My Supermarket";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="jumbotron">
+        <h1>Supermarket - Heaven for shopping</h1>
+        @using (Html.BeginForm("IndexHome", "Products", FormMethod.Get))
+        {
+            <p>
+                Product Name: @Html.TextBox("id")
+                <input class="btn btn-primary btn-lg" type="submit" value="Search" />
+            </p>
+        }
+    </div>
+
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <img style="width:300px;height:300px" src="@Html.DisplayFor(modelItem => item.Image)" class="img-responsive"/>
+            <h2 style="font-size:15px; font-weight:bold">
+                @Html.DisplayFor(modelItem => item.ProName)
+            </h2>
+            <p>Price: $@Html.DisplayFor(modelItem => item.UnitPrice) </p>
+            <p>Supplier: @Html.DisplayFor(modelItem => item.Supplier.SupName)</p>
+            <p><a class="btn btn-default" href="@Url.Action("DetailsHome","Products", new { id = item.ProID})">View More Detail </a></p>
+        </div>
+    }
+</div>
+

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<LoginSupermarketW6.Models.Order>
+
+@{
+    ViewBag.Title = "Orders";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="jumbotron">
+    <h1>ORDER</h1>
+    <p class="lead">Search ....</p>
+</div>
+
+@foreach (var item in Model)
+{
+    <dt>
+        ID: @Html.DisplayFor(modelItem => item.OrderID) (Status: @Html.DisplayFor(modelItem => item.OrderStatu.Description)) 
+    </dt>
+    <p>
+        Customer: @Html.DisplayFor(modelItem => item.Customer.CusName) |
+        @Html.ActionLink("Details", "Details", new { id = item.OrderID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.OrderID })
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Product ID
+            </th>
+            <th>
+                Product Name
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Discount
+            </th>
+            <th>
+                Price
+            </th>
+        </tr>
+
+        @foreach (LoginSupermarketW6.Models.OderDetail oderDetail in ViewBag.OderDetailList)
+        {
+            if (oderDetail.OrderID.Equals(item.OrderID))
+            {
+                <tr>
+                    <td>@oderDetail.ProID</td>
+                    <td>@oderDetail.Product.ProName</td>
+                    <td>@oderDetail.Quantity</td>
+                    <td>@oderDetail.Discount</td>
+                    <td>@oderDetail.UnitPrice</td>
+                </tr>
+            };
+        }
+
+    </table>
+
+}

@@ -1,0 +1,85 @@
+﻿@model IEnumerable<LoginSupermarketW6.Models.Product>
+
+@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Products</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+
+    @using (Html.BeginForm("Index", "Products", FormMethod.Get))
+    {
+    <p>
+        Product Name: @Html.TextBox("id")
+        <input type="submit" value="Search" />
+    </p>
+}
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuantityPerUnit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitInStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitOnOrder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category.CatName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Supplier.SupName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status1.Description)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuantityPerUnit)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnitPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnitInStock)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnitOnOrder)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.CatName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Supplier.SupName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status1.Description)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ProID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ProID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ProID })
+                </td>
+            </tr>
+        }
+
+    </table>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5cdd80953ce64b51a3421f48a6163813" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="SupermarketModel.AspNetRole" Width="1.5" PointX="6" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SupermarketModel.AspNetUser" Width="1.5" PointX="8.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SupermarketModel.Category" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SupermarketModel.Customer" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SupermarketModel.Order" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SupermarketModel.OrderStatu" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SupermarketModel.Product" Width="1.5" PointX="5.625" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="SupermarketModel.Status" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SupermarketModel.OderDetail" Width="1.5" PointX="7.5" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="SupermarketModel.FK_AspNetUsers_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.FK__Products__CatID__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.FK_Category_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.FK_Customers_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.FK_Orders_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.FK__OderDetai__Order__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.FK_Orders_OrderStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.FK__OderDetai__ProID__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.FK_Products_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SupermarketModel.Supplier" Width="1.5" PointX="3" PointY="12.125" />
+        <AssociationConnector Association="SupermarketModel.FK__Products__SupID__49C3F6B7" />
+        <AssociationConnector Association="SupermarketModel.FK_Suppliers_Status" />
+        <EntityTypeShape EntityType="SupermarketModel.AspNetUserLogin" Width="1.5" PointX="10.5" PointY="8.375" />
+        <AssociationConnector Association="SupermarketModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
